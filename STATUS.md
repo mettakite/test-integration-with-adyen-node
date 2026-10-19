@@ -17,7 +17,7 @@ Last updated: 2026-10-19
 
 - [x] Live run with test credentials: `Authorised` on session `CSBDFE6AA7D8662CF2E84A2AB` (2026-10-19)
 - [x] Authorised screenshot in the README
-- [ ] Real webhook through a tunnel
+- [x] Real webhook through a tunnel: `AUTHORISATION` for pspReference `DJ8WLRZBR386R5V5` accepted via cloudflared; the earlier payment (`WDM3GMN2SHRV7L65`) arrived on Adyen's retry after the URL was fixed; Customer Area test notification delivered 4 times, recorded once
 - [ ] iDEAL round trip, refund flow
 
 ## Node-specific notes for the friction log
