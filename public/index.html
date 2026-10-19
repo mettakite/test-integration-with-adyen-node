@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Integration with Adyen</title>
+  <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/6.46.0/adyen.css">
+  <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Test Integration with Adyen</h1>
+      <p class="sub">Sessions flow &middot; Drop-in v6 &middot; Express (Node) &middot; test environment</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. Create a session</h2>
+      <form id="session-form" class="row">
+        <label>Amount (minor units) <input id="amount" type="number" value="1000" min="1"></label>
+        <label>Currency <input id="currency" value="EUR" maxlength="3"></label>
+        <label>Country <input id="country" value="NL" maxlength="2"></label>
+        <button type="submit">Start checkout</button>
+      </form>
+      <pre id="session-log" class="log" aria-live="polite">Waiting.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>2. Pay</h2>
+      <div id="dropin-container"></div>
+      <p class="hint">Test card: 4111 1111 1111 1111 &middot; any future expiry &middot; CVC 737 &middot; any name.</p>
+    </section>
+
+    <section class="panel">
+      <h2>3. Result</h2>
+      <pre id="result-log" class="log" aria-live="polite">No payment yet.</pre>
+      <p class="hint">The webhook is the source of truth. See <a href="/api/webhooks/received">/api/webhooks/received</a>.</p>
+    </section>
+  </main>
+
+  <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/6.46.0/adyen.js"></script>
+  <script>
+    window.ADYEN_CONFIG = { clientKey: "{{ client_key }}", environment: "{{ environment }}" };
+  </script>
+  <script src="/static/checkout.js"></script>
+</body>
+</html>

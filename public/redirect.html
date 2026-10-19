@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finishing your payment</title>
+  <link rel="stylesheet" href="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/6.46.0/adyen.css">
+  <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Finishing your payment</h1>
+    <pre id="result-log" class="log">Submitting redirect result to Adyen...</pre>
+    <p><a href="/">Back to checkout</a></p>
+  </main>
+  <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/6.46.0/adyen.js"></script>
+  <script>
+    window.ADYEN_CONFIG = {
+      clientKey: "{{ client_key }}",
+      environment: "{{ environment }}",
+      sessionId: "{{ session_id }}",
+      redirectResult: "{{ redirect_result }}"
+    };
+  </script>
+  <script src="/static/redirect.js"></script>
+</body>
+</html>
